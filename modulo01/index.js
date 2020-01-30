@@ -41,13 +41,13 @@ function checkUserInArray(req, res, next) {
 }
 
 server.get('/users', (req, res) => {
-  return res.json(user);
+  return res.json(users);
 });
 
 server.get('/users/:index', checkUserInArray, (req, res) => {
   // const { index } = req.params;
   // return res.json(users[index]);
-  return res.json(user);
+  return res.json(req.user);
 });
 
 server.post('/users', checkUserExistance, (req, res) => {
