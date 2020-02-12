@@ -4,6 +4,8 @@
 import express from 'express'; // after run => yarn add sucrase nodemon -D
 import routes from './routes'; // after run => yarn add sucrase nodemon -D
 
+import './database';
+
 class App {
   constructor() {
     this.server = express();
