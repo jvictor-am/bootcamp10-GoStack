@@ -56,7 +56,6 @@ export default function Home() {
               <MdAddShoppingCart size={16} color="#fff" />{' '}
               {amount[product.id] || 0}
             </div>
-
             <span>ADICIONAR AO CARRINHO</span>
           </button>
         </li>
