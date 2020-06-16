@@ -1,6 +1,14 @@
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import {
+  startOfHour,
+  parseISO,
+  isBefore,
+  format,
+  subHours,
+  getHours,
+} from 'date-fns';
+import en from 'date-fns/locale/en-US';
+// import pt from 'date-fns/locale/pt';
 import User from '../models/User';
 import File from '../models/File';
 import Appointment from '../models/Appointment';
@@ -79,9 +87,19 @@ class AppointmentController {
     const hourStart = startOfHour(parseISO(date));
 
     if (isBefore(hourStart, new Date())) {
+      // console.log(getHours(hourStart));
+      // console.log(getHours(date));
       return res.status(400).json({ error: 'Past dates are not permitted' });
     }
 
+    /**
+     * Check for hours that establishment is open
+     */
+    if (getHours(hourStart) > 20 || getHours(hourStart) < 8) {
+      return res
+        .status(400)
+        .json({ error: 'Please choose appointment between 8:00h and 20:00h' });
+    }
     /**
      * Check date availability
      */
@@ -111,12 +129,14 @@ class AppointmentController {
     const user = await User.findByPk(req.userId);
     const formattedDate = format(
       hourStart,
-      "'dia' dd 'de' MMMM', às' H:mm'h'",
-      { locale: pt }
+      // "'dia' dd 'de' MMMM', às' H:mm'h'",
+      "MMMM dd', at' H:mm'h'",
+      { locale: en }
     );
 
     await Notification.create({
-      content: `Novo agendamento de ${user.name} para ${formattedDate}`,
+      // content: `Novo agendamento de ${user.name} para ${formattedDate}`,
+      content: `New ${user.name}'s appointment for ${formattedDate}`,
       user: provider_id,
     });
 

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
@@ -75,6 +76,21 @@ export default createGlobalStyle`
 .Toastify__progress-bar {
   height: 4px;
   /* background-color: #000; */
+}
+
+.ps .ps__rail-x:hover, .ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus, .ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking, .ps .ps__rail-y.ps--clicking{
+  background-color: transparent;
+  /* background-color: #7159c1; */
+  opacity: 1;
+  border-radius: 8px;
+}
+
+.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+    /* background-color: #ff892e; */
+    background-color: #7159c1;
+    width: 6px;
 }
 
 `;
