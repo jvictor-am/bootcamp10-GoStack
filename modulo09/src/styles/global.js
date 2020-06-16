@@ -18,12 +18,13 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100%
-    /* min-height: 100% */
+    min-height: 100vh;
+    /* height: 100%; */
   }
 
   body {
-    background: #f1f1f1;
+    background: linear-gradient(-90deg, #7159c1, #ab59c1);
+    /* background: #f1f1f1; */
     -webkit-font-smoothing: antialiased !important;
   }
 
