@@ -25,7 +25,7 @@ export function* updateProfile({ payload }) {
     yield put(updateProfileSuccess(response.data));
   } catch (err) {
     toast.error(
-      'Not possible to update your profile, please check your password !'
+      'Not possible to update your profile, please check your credentials !'
     );
     yield put(updateProfileFailure());
   }
