@@ -15,7 +15,7 @@ export default function Routes() {
       // headerMode="none"
       screenOptions={{
         headerShown: false,
-        cardStyle: { backgroundColor: '#71591c' },
+        // cardStyle: { backgroundColor: '#71591c' },
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         // headerTintColor: '#ffd700',
         // headerStyle: { backgroundColor: '#000' },
