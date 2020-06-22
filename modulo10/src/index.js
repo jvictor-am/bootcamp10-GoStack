@@ -9,11 +9,12 @@ import { View, StatusBar } from 'react-native';
 import './config/ReactotronConfig';
 
 import { store, persistor } from './store';
+// import App from './App';
 import Routes from './routes';
 
 // import { Container } from './styles';
 
-export default function App() {
+export default function Index() {
   return (
     <NavigationContainer>
       <Provider store={store}>
