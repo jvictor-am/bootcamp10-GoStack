@@ -6,8 +6,6 @@ import Appointment from '~/components/Appointment';
 
 import { Container, Title, List } from './styles';
 
-// const data = [1, 2, 3, 4, 5, 6, 7];
-
 export default function Dashboard() {
   const [appointments, setAppointments] = useState([]);
 
