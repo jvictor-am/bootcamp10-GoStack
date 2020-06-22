@@ -1,10 +1,9 @@
 import React from 'react';
-import {
-  // createStackNavigator,
-  CardStyleInterpolators,
-} from '@react-navigation/stack';
+// import {
+//   // createStackNavigator,
+//   CardStyleInterpolators,
+// } from '@react-navigation/stack';
 
-// import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -14,13 +13,10 @@ import Profile from '../pages/Profile';
 
 const AppTab = createBottomTabNavigator();
 
-// export default function Routes() {
 export default function AppRoutes() {
   return (
     <AppTab.Navigator
       // screenOptions={{
-      //   tabBarIcon: () => <Icon name="event" size={20} color="#fff" />,
-      //   tabBarLabel: 'Appointments',
       //   // headerShown: false,
       //   // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       // }}
