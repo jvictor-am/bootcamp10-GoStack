@@ -1,0 +1,20 @@
+omni init nomedoprojeto
+ - -
+omni init nomedoprojeto --only=server
+omni init nomedoprojeto --only=mobile
+omni init nomedoprojeto --only=web
+
+yarn add jest -D
+
+yarn jest --init
+
+? Would you like to use Jest when running "test" script in "package.json"? » (Y/n)
+√ Would you like to use Jest when running "test" script in "package.json"? ... yes
+√ Choose the test environment that will be used for testing » node
+√ Do you want Jest to add coverage reports? ... yes
+√ Which provider should be used to instrument code for coverage? » babel
+√ Automatically clear mock calls and instances between every test? ... yes
+
+yarn add --dev @sucrase/jest-plugin
+
+yarn add -D @types/jest
