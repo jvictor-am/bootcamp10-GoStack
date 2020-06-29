@@ -18,3 +18,13 @@ yarn jest --init
 yarn add --dev @sucrase/jest-plugin
 
 yarn add -D @types/jest
+
+yarn sequelize migration:create --name=create-users
+
+yarn add sqlite3 -D
+
+yarn add supertest -D
+
+yarn add bcryptjs
+
+yarn add factory-girl faker -D
